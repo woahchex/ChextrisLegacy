@@ -1070,13 +1070,6 @@ function love.draw()
 
 
 	swidth, sheight = love.graphics.getDimensions()
-	game.swidth = swidth
-	game.sheight = sheight
-	bumpx = (swidth-800)/2
-	bumpy = (sheight-600)/2
-
-	game.bumpx = bumpx
-	game.bumpy = bumpy
 
 	if love.system.getOS() == "Android" then
 		local scale = love.graphics.getDPIScale()
@@ -1085,6 +1078,14 @@ function love.draw()
 		swidth = swidth * scale
 		sheight = sheight * scale
 	end
+	
+	game.swidth = swidth
+	game.sheight = sheight
+	bumpx = (swidth-800)/2
+	bumpy = (sheight-600)/2
+
+	game.bumpx = bumpx
+	game.bumpy = bumpy
 
 	if not data.boardZoom then data.boardZoom = 1 end
 
